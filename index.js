@@ -1,5 +1,10 @@
 const links = document.querySelectorAll("nav a");
-const current = location.pathname.split("/").pop();
+
+let current = location.pathname.split("/").pop() || "index.html";
+
+if (current === "info") {
+  current = "index.html";
+}
 
 links.forEach(link => {
   const linkPage = link.getAttribute("href").replace("./", "");
